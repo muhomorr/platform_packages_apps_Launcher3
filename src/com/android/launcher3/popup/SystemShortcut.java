@@ -226,7 +226,7 @@ public abstract class SystemShortcut<T extends ActivityContext> extends ItemInfo
 
         @Override
         public void onClick(View v) {
-            dismissTaskMenuView(mTarget);
+            dismissTaskMenuView();
 
             Intent intent = getIntent(targetPackage);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
