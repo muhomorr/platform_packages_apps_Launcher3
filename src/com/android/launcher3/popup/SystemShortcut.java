@@ -12,6 +12,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.GosPackageState;
+import android.content.pm.GosPackageStateFlag;
 import android.content.pm.ShortcutInfo;
 import android.graphics.Rect;
 import android.os.Process;
@@ -259,7 +260,7 @@ public abstract class SystemShortcut<T extends ActivityContext> extends ItemInfo
 
         @Nullable
         public static <T extends ActivityContext> StorageScopes<T> maybeGet(T target, ItemInfo itemInfo, View originalView) {
-            if (hasGosPackageStateFlag(itemInfo, GosPackageState.FLAG_STORAGE_SCOPES_ENABLED)) {
+            if (hasGosPackageStateFlag(itemInfo, GosPackageStateFlag.STORAGE_SCOPES_ENABLED)) {
                 return new StorageScopes<>(target, itemInfo, originalView);
             }
 
