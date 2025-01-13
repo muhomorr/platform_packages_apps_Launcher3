@@ -228,10 +228,7 @@ public abstract class SystemShortcut<T extends ActivityContext> extends ItemInfo
             if (pkg == null) {
                 return false;
             }
-
-            GosPackageState ps = GosPackageState.get(pkg, itemInfo.user.getIdentifier());
-
-            return ps != null && ps.hasFlag(flag);
+            return GosPackageState.get(pkg, itemInfo.user).hasFlag(flag);
         }
 
         @Override
